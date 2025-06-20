@@ -6,7 +6,7 @@ const app = express();
 
 app.get('/api/dogs', (req, res) => {
     Pool.query(` SELECT Dogs.name AS dog_name FROM Dogs
-                 JOIN Users ON Users.user_id = Dogs_owner.id`)
+                 JOIN Users ON Users.user_id = Dogs_owner.id`);
 });
 
 
@@ -15,6 +15,5 @@ app.get('/api/walkrequests/open', (req, res) => {
                 FROM WalkRequests Requests JOIN Dogs Dogs ON Dogs.dog_id = Requests.dog_id
                 WHERE Requests.status = 'open'
                 OREDER BY Resquests.requested_time;`
-    )
-
-})
+    );
+});
