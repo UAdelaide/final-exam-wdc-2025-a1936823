@@ -9,6 +9,7 @@ app.get('/api/dogs', (req, res) => {
                  JOIN Users ON Users.user_id = Dogs_owner.id`)
     .then(([rows]) => res.json(rows))
     .catch(err => {
-        console.
+        console.error(err);
+        res.status(500).json({})
     })
 })
