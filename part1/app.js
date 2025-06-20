@@ -14,3 +14,4 @@ app.get('/api/dogs', (req, res) => {
     });
 });
 
+app.get('/api/walk')
