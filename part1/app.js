@@ -17,3 +17,4 @@ app.get('/api/walkrequests/open', (req, res) => {
                 OREDER BY Resquests.requested_time;`);
 });
 
+app.get('/api/walkers')
