@@ -25,6 +25,9 @@
                     showDog: false
                     };
                 },
+                computed: {
+                    displayC
+                }
                 methods: {
                     incHover() {
                         this.hoverCount++;
@@ -41,8 +44,8 @@
                     reset() {
                         this.hoverCount = 0;
                         this.showDog = false;
-                    }
-     }
+                }
+            }
     }).mount('#app');
 </script>
 </body>
