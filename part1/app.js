@@ -23,6 +23,6 @@ app.get('/api/walkers/summary', (req, res) => {
                 ROUND (AVG(rating.rating), 2) AS average_rating,
                 COUNT(ratings.rating_id) AS completed_walks
             FROM Users walkers LEFT JOIN WalkRatings ratings ON ratings.walker_id = walkers.user_id
-            WHERE walkers.role = 'walker
+            WHERE walkers.role = 'walker' GROUP BY walkers.user_id
         `)
 })
