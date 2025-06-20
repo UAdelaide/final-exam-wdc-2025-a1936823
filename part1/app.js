@@ -11,8 +11,8 @@ const app = express();
 
 app.get('/api/dogs', (req, res) => {
     Pool.query(` SELECT dogs.name AS dog_name
-                FROM Dogs
-                JOIN Users ON Users.user_id = Dogs_owner.id`)
+                FROM Dogs dogs
+                JOIN Users ON users.user_id = dogs_owner.id`)
     .then(([row]) => res.json(rows))
     .catch(err => {
         console.error(err);
