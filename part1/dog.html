@@ -20,13 +20,13 @@
             methods: {
                 incHover() {
                     this.hoverCount++;
-                    if (this)
+                    if (this.hoverCount >= 10) this.fetchDog();
                 }
                 fetchDog() {
                     fetch('https://dog.ceo/api/breeds/image/random/3')
                     .then(res => res.json())
                     .then(data => {
-                        this.dogUrl = data.message;
+                        this.dogUrl = 
                     });
                 }
             }
