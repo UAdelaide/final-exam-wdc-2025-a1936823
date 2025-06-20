@@ -41,5 +41,7 @@ app.get('/api/walkers/summary', (req, res) => {
             GROUP BY walkers.username;
         `)
     .then(([rows]) => res.json(rows))
-    
+    .catch(err => {
+        console
+    })
 });
