@@ -1,16 +1,7 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
 
-const pool = mysql.CreatePool({
-    host: 'localhost',
-    user:   'root',
-    password: 'password',
-    database: 'dog_db',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-});
-
+const pool = mysql.CreatePool({ });
 const app = express();
 
 app.get('/api/dogs', (req, res) => {
