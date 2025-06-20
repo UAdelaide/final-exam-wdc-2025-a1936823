@@ -21,4 +21,7 @@ app.get('/api/walkrequests/open', (req, res) => {
                 OREDER BY Resquests.requested_time;`
     )
     .then(([row]) => res.json(rows))
+    .catch(err => {
+        console.error(err);
+    })
 })
