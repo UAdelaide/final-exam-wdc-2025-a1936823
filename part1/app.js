@@ -15,5 +15,5 @@ app.get('/api/dogs', (req, res) => {
 });
 
 app.get('/api/walkrequests/open', (req, res) => {
-    pool.query(` SELECT WalkRequests.request_id, Dogs.name AS dong_name, Requests.request_time, Requests.duration_minutes, Requests.location, `)
+    pool.query(` SELECT WalkRequests.request_id, Dogs.name AS dong_name, Requests.request_time, Requests.duration_minutes, Requests.location, Users.name AS owner_username`)
 })
