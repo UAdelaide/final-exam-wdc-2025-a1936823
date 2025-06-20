@@ -18,12 +18,16 @@
                 showDog: false
             };
             methods: {
+                incHover() {
+                    this.hoverCount++;
+                    if (this)
+                }
                 fetchDog() {
                     fetch('https://dog.ceo/api/breeds/image/random/3')
                     .then(res => res.json())
                     .then(data => {
                         this.dogUrl = data.message;
-                    }) 
+                    });
                 }
             }
         }
