@@ -14,4 +14,6 @@ app.get('/api/dogs', (req, res) => {
     });
 });
 
-app.get('/api/walk')
+app.get('/api/walkrequests/open', (req, res) => {
+    pool.query
+})
