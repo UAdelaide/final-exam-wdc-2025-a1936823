@@ -47,4 +47,5 @@ app.get('/api/walkers/summary', (req, res) => {
     });
 });
 
-app.listen(8080)
+app.listen(8080, () => console.log('API live on :8080'));
+
