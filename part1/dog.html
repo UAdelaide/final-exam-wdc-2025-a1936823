@@ -26,11 +26,10 @@
             Hover the title 10 times to unlock the dog of today
             ({{ displayCount }}/10)
         </p>
-        <img v-if="showDog" :src="" alt="">
+        <img v-if="showDog" :src="https://images.dog.ceo/breeds/terrier-american/n02093428_1746.jpg">
 
         <button type="button"  @click="fetchDog">Refresh</button>
-        <div @click="reset">
-        </div>
+        <div @click="reset"></div>
 
 
 
