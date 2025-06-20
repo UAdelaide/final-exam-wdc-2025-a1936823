@@ -20,4 +20,5 @@ app.get('/api/walkrequests/open', (req, res) => {
                 WHERE Requests.status = 'open'
                 OREDER BY Resquests.requested_time;`
     )
+    .then(([row]) => res.json(rows))
 })
