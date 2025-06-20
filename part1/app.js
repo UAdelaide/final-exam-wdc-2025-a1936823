@@ -25,9 +25,9 @@ app.get('/api/walkrequests/open', (req, res) => {
     pool.query(` SELECT walkRequests.request_id, dogs.name AS dog_name, requests.request_time, requests.duration_minutes, requests.location, users.name AS owner_username
                 FROM WalkRequests requests
                 JOIN Dogs dogs ON dogs.dog_id = requests.dog_id
-                JOIN Users users ON Users.user_id = Dogs.owner_id
-                WHERE Requests.status = 'open'
-                ORDER BY Requests.requested_time;`)
+                JOIN Users users ON users.user_id = dogs.owner_id
+                WHERE requests.status = 'open'
+                ORDER BY requests.requested_time;`)
     .then(([rows]) => res.json(rows))
     .catch(err => {
         console.error(err);
