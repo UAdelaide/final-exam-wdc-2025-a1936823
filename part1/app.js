@@ -1,2 +1,3 @@
 import express from 'express';
-import
+import mysql from 'mysql2/promise';
+
