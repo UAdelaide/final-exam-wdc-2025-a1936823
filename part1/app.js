@@ -19,6 +19,7 @@ app.get('/api/walkrequests/open', (req, res) => {
 
 app.get('/api/walkers/summary', (req, res) => {
     pool.query(`SELECT walkers.username AS walker_username,
-                COUNT(ratings.rating_id)
+                COUNT(ratings.rating_id) AS total_ratings,
+            ROUND (AVG())
         `)
 })
