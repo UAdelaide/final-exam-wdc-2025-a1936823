@@ -18,5 +18,7 @@ app.get('/api/walkrequests/open', (req, res) => {
 });
 
 app.get('/api/walkers/summary', (req, res) => {
-    pool.query(` SELECT walker.username AS walker`)
+    pool.query(`SELECT walker.username AS walker_username,
+                COUNT
+        `)
 })
