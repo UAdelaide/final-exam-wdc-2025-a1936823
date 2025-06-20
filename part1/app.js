@@ -10,6 +10,7 @@ app.get('/api/dogs', (req, res) => {
     .then(([rows]) => res.json(rows))
     .catch(err => {
         console.error(err);
-        res.status(500).json({})
-    })
-})
+        res.status(500).json({ error: 'Failed to fatech dogs'});
+    });
+});
+
