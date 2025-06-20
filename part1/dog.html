@@ -20,7 +20,10 @@
             methods: {
                 fetchDog() {
                     fetch('https://dog.ceo/api/breeds/image/random/3')
-                    .then
+                    .then(res => res.json())
+                    .then(data => {
+                        this.dogUrl = data.message;
+                    })
                 }
             }
         }
