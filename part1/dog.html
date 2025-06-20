@@ -16,6 +16,7 @@
     .shake {
         animation: shake 0.5s infinite;
     }
+    
     .fake_reset_button {
         width: 23px;
         height: 32px;
@@ -34,7 +35,7 @@
         <img v-if="showDog" :src="https://images.dog.ceo/breeds/terrier-american/n02093428_1746.jpg">
 
         <button type="button"  @click="fetchDog">Refresh</button>
-        <div id="=" @click="reset"></div>
+        <div id="fake_reset_button" @click="reset"></div>
 
 
 
