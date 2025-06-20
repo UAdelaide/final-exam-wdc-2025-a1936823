@@ -43,8 +43,8 @@ app.get('/api/walkers/summary', (req, res) => {
             FROM Users walkers
             LEFT JOIN WalkRatings ratings ON ratings.walker_id = walkers.user_id
             WHERE walkers.role = 'walker'
-            GROUP BY walkers.user_id
-            GROUP BY walkers.username;
+            GROUP BY walkers.user_id, walkers.username
+            ORDER BY walkers.
         `)
     .then(([rows]) => res.json(rows))
     .catch(err => {
