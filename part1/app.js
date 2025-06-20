@@ -15,5 +15,5 @@ app.get('/api/dogs', (req, res) => {
 });
 
 app.get('/api/walkrequests/open', (req, res) => {
-    pool.query(` SELECT WalkRequests.request_id, Users.name`)
+    pool.query(` SELECT WalkRequests.request_id, Dogs.name AS dong_name`)
 })
