@@ -19,10 +19,10 @@
 </style>
 <body>
     <div>
-        <h1 id="shake">
+        <h1 id="shake" @mouseover="incHover">
             Dog of the Day
         </h1>
-        <p>
+        <p v-if+>
             Hover the title 10 times to unlock the dog of today
             ({{ displayCount }}/10)
         </p>
