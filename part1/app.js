@@ -11,8 +11,8 @@ app.get('/api/dogs', (req, res) => {
     .then(([row] => res.json(rows))
     .catch(err => {
         console.error(err);
-        res.status(500).json({ error: 'Fa'})
-    }))
+        res.status(500).json({ error: 'Failed to fetch dogs'});
+    }));
 });
 
 
