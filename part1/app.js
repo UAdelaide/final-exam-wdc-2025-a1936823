@@ -23,7 +23,10 @@ app.get('/api/walkrequests/open', (req, res) => {
                 WHERE Requests.status = 'open'
                 OREDER BY Resquests.requested_time;`)
     .then(([rows]) => res.json(rows))
-    .catch(err => )
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({})
+    })
 });
 
 app.get('/api/walkers/summary', (req, res) => {
