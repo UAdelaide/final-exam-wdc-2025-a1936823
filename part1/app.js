@@ -7,5 +7,5 @@ const app = express();
 app.get('/api/dogs', (req, res) => {
     Pool.query(` SELECT Dogs.name AS dog_name FROM Dogs
                  JOIN Users ON Users.user_id = Dogs_owner.id`)
-    
+    .then(([rows]) => res.json)
 })
