@@ -42,6 +42,7 @@ app.get('/api/walkers/summary', (req, res) => {
         `)
     .then(([rows]) => res.json(rows))
     .catch(err => {
-        console
+        console.error(err);
+        res.status(500).json({ error: 'Failed to build walker summary'})
     })
 });
