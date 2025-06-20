@@ -21,7 +21,7 @@ app.get('/api/walkrequests/open', (req, res) => {
                 FROM WalkRequests Requests
                 JOIN Dogs Dogs ON Dogs.dog_id = Requests.dog_id
                 WHERE Requests.status = 'open'
-                OREDER BY Resquests.requested_time;`)
+                ORDER BY Requests.requested_time;`)
     .then(([rows]) => res.json(rows))
     .catch(err => {
         console.error(err);
