@@ -5,7 +5,8 @@ const pool = mysql.CreatePool({ /* host, user, password, database */ });
 const app = express();
 
 app.get('/api/dogs', (req, res) => {
-    Pool.query(` SELECT Dogs.name AS dog_name FROM Dogs
+    Pool.query(` SELECT Dogs.name AS dog_name
+                FROM Dogs
                  JOIN Users ON Users.user_id = Dogs_owner.id`);
 });
 
@@ -23,6 +24,6 @@ app.get('/api/walkers/summary', (req, res) => {
                 ROUND (AVG(rating.rating), 2) AS average_rating,
                 COUNT(ratings.rating_id) AS completed_walks
             FROM Users walkers LEFT JOIN WalkRatings ratings ON ratings.walker_id = walkers.user_id
-            WHERE walkers.role = 'walker' GROUP BY walkers.user_id
+            WHERE walkers.role = 'walker' GROUP BY walkers.user_id GROUP BY walkers.username;
         `)
 })
