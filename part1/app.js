@@ -22,7 +22,8 @@ app.get('/api/walkrequests/open', (req, res) => {
                 JOIN Dogs Dogs ON Dogs.dog_id = Requests.dog_id
                 WHERE Requests.status = 'open'
                 OREDER BY Resquests.requested_time;`)
-    .then(([rows]) => )
+    .then(([rows]) => res.json(rows))
+    .catch(err => )
 });
 
 app.get('/api/walkers/summary', (req, res) => {
