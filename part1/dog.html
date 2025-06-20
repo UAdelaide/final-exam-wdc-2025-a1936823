@@ -10,7 +10,7 @@
         <h1>
             Dog of the Day
         </h1>
-        <p>Hover 10 times to unlock the dog of today</p>
+        <p>Hover the <title></title>10 times to unlock the dog of today</p>
 
 
     </div>
@@ -26,8 +26,10 @@
                     };
                 },
                 computed: {
-                    displayC
-                }
+                    displayCount() {
+                        return this.hoverCount === 8 ? 10 : this.hoverCount;
+                    }
+                },
                 methods: {
                     incHover() {
                         this.hoverCount++;
