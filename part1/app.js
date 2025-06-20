@@ -7,12 +7,8 @@ const app = express();
 app.get('/api/dogs', (req, res) => {
     Pool.query(` SELECT Dogs.name AS dog_name FROM Dogs
                  JOIN Users ON Users.user_id = Dogs_owner.id`)
-    .then(([rows]) => res.json(rows))
-    .catch(err => {
-        console.error(err);
-        res.status(500).json({ error: 'Failed to fatech dogs'});
-    });
 });
+
 
 app.get('/api/walkrequests/open', (req, res) => {
     pool.query(` SELECT WalkRequests.request_id, Dogs.name AS dong_name, Requests.request_time, Requests.duration_minutes, Requests.location, Users.name AS owner_username
@@ -20,8 +16,5 @@ app.get('/api/walkrequests/open', (req, res) => {
                 WHERE Requests.status = 'open'
                 OREDER BY Resquests.requested_time;`
     )
-    .then(([row]) => res.json(rows))
-    .catch(err => {
-        console.error(err);
-    })
+
 })
