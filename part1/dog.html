@@ -22,11 +22,11 @@
         <h1 id="shake" @mouseover="incHover">
             Dog of the Day
         </h1>
-        <p v-if+>
+        <p v-if="!showDog">
             Hover the title 10 times to unlock the dog of today
             ({{ displayCount }}/10)
         </p>
-        <img src="" alt="">
+        <img v-if="showDog" :src="" alt="">
 
         <button type="button"  @click="fetchDog">Refresh</button>
         <div @click="reset">
