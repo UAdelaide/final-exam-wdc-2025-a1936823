@@ -25,8 +25,8 @@ app.get('/api/walkrequests/open', (req, res) => {
     .then(([rows]) => res.json(rows))
     .catch(err => {
         console.error(err);
-        res.status(500).json({})
-    })
+        res.status(500).json({ error: 'Failed to fetch open requests'});
+    });
 });
 
 app.get('/api/walkers/summary', (req, res) => {
@@ -39,5 +39,6 @@ app.get('/api/walkers/summary', (req, res) => {
             WHERE walkers.role = 'walker'
             GROUP BY walkers.user_id
             GROUP BY walkers.username;
-        `);
+        `)
+    .then(([rows]))
 });
