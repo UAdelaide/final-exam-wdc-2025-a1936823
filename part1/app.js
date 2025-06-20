@@ -8,11 +8,11 @@ app.get('/api/dogs', (req, res) => {
     Pool.query(` SELECT Dogs.name AS dog_name
                 FROM Dogs
                 JOIN Users ON Users.user_id = Dogs_owner.id`)
-    .then(([row] => res.json(rows))
+    .then(([row]) => res.json(rows))
     .catch(err => {
         console.error(err);
         res.status(500).json({ error: 'Failed to fetch dogs'});
-    }));
+    });
 });
 
 
