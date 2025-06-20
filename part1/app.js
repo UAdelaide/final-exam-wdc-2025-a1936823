@@ -26,6 +26,8 @@ app.get('/api/walkers/summary', (req, res) => {
                 COUNT(ratings.rating_id) AS completed_walks
             FROM Users walkers
             LEFT JOIN WalkRatings ratings ON ratings.walker_id = walkers.user_id
-            WHERE walkers.role = 'walker' GROUP BY walkers.user_id GROUP BY walkers.username;
-        `)
-})
+            WHERE walkers.role = 'walker'
+            GROUP BY walkers.user_id
+            GROUP BY walkers.username;
+        `);
+});
