@@ -12,37 +12,37 @@
         </h1>
         <p>Hover 10 times to unlock the dog of today</p>
 
-        
+
     </div>
 
 <script>
     const {createApp } = Vue,
-    createApp({
-        data() {
-            return {
-                dogUrl: '',
-                hoverCount: 0,
-                showDog: false
-                };
-            },
-            methods: {
-                incHover() {
-                    this.hoverCount++;
-                    if (this.hoverCount >= 10) this.fetchDog();
+        createApp({
+            data() {
+                return {
+                    dogUrl: '',
+                    hoverCount: 0,
+                    showDog: false
+                    };
                 },
-                fetchDog() {
-                    fetch('https://dog.ceo/api/breeds/image/random/3')
-                    .then(res => res.json())
-                    .then(data => {
-                        this.dogUrl = json.message;
-                        this.showDog = true;
-                    });
-                },
-                reset() {
-                    this.hoverCount = 0;
-                    this.showDog = false;
-                }
-            }
+                methods: {
+                    incHover() {
+                        this.hoverCount++;
+                        if (this.hoverCount >= 10) this.fetchDog();
+                    },
+                    fetchDog() {
+                        fetch('https://dog.ceo/api/breeds/image/random/3')
+                        .then(res => res.json())
+                        .then(data => {
+                            this.dogUrl = json.message;
+                            this.showDog = true;
+                        });
+                    },
+                    reset() {
+                        this.hoverCount = 0;
+                        this.showDog = false;
+                    }
+     }
     }).mount('#app');
 </script>
 </body>
