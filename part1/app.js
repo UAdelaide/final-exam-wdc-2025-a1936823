@@ -10,7 +10,7 @@ const pool = mysql.createPool({
 const app = express();
 
 app.get('/api/dogs', (req, res) => {
-    Pool.query(` SELECT Dogs.name AS dog_name
+    Pool.query(` SELECT dogs.name AS dog_name
                 FROM Dogs
                 JOIN Users ON Users.user_id = Dogs_owner.id`)
     .then(([row]) => res.json(rows))
@@ -22,7 +22,7 @@ app.get('/api/dogs', (req, res) => {
 
 
 app.get('/api/walkrequests/open', (req, res) => {
-    pool.query(` SELECT WalkRequests.request_id, Dogs.name AS dong_name, Requests.request_time, Requests.duration_minutes, Requests.location, Users.name AS owner_username
+    pool.query(` SELECT WalkRequests.request_id, dogs.name AS dog_name, Requests.request_time, Requests.duration_minutes, Requests.location, Users.name AS owner_username
                 FROM WalkRequests Requests
                 JOIN Dogs Dogs ON Dogs.dog_id = Requests.dog_id
                 JOIN Users Users ON Users.user_id = Dogs.owner_id
@@ -44,7 +44,7 @@ app.get('/api/walkers/summary', (req, res) => {
             LEFT JOIN WalkRatings ratings ON ratings.walker_id = walkers.user_id
             WHERE walkers.role = 'walker'
             GROUP BY walkers.user_id, walkers.username
-            ORDER BY walkers.
+            ORDER BY walkers.username;
         `)
     .then(([rows]) => res.json(rows))
     .catch(err => {
