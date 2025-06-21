@@ -13,4 +13,5 @@ router,get('/mine', (req, res) => {
     )
     .then(([rows]) => res.json(rows))
     .catch(err => res.status(500).json({ error: 'DB error'}));
-});
+    );
+})
