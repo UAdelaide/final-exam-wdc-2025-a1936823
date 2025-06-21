@@ -65,7 +65,8 @@
             const data = await res.json();
             user.value = data;
           } catch (err) {
-            console.error(err)
+            console.error(err);
+            error.value = 'Failed to load uner info';
           }
         }
 
