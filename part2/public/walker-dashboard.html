@@ -90,8 +90,11 @@
       }
     }).mount('#app');
 
-  document.getElementById('logoutbtn').addEventListener('click;, () =>{
-  fetch}')
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    fetch('/api/users/logout', {method: 'POST'})
+      .then(() =>
+    window.location = '/index.html')
+  });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
