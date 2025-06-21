@@ -7,6 +7,9 @@ router,get('/mine', (req, res) => {
     if (!req,session.user || req.session.user.role !== 'owner')
         return res.status(401).json({error: 'Not authorized'});
 
+    db.query(
+        'SELECT dog_id '
+    )
 
     )
 })
