@@ -61,14 +61,10 @@ router.post('/login', async (req, res) => {
 
     res.json({ redirext });
   } catch (err) {
-    console.error(err)
+    console.error(err);
+    res.status(500).json({error: 'Login failed'});
   }
 
-
-    res.json({ message: 'Login successful', user: rows[0] });
-  } catch (error) {
-    res.status(500).json({ error: 'Login failed' });
-  }
 });
 
 module.exports = router;
