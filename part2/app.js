@@ -9,8 +9,7 @@ app.use(
         resave: false,
         saveUnimitialized: false,
     })
-)
-;
+);
 const app = express();
 
 // Middleware
