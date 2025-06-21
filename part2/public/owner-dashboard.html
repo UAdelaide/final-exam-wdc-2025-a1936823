@@ -128,13 +128,12 @@
           walks,
           message,
           error,
-          submitWalkRequest
+          submitWalkRequest,
+          async logout() {
+            await fetch('/api/users/logout', {method: 'POST'});
+            window.location = '/inder.html';
+          }
         };
-        async function logout() {
-          await fetch('/api/users/logout', {method: 'POST'});
-          window.location = '/inder.html';
-        };
-      }return {logout};
     }).mount('#app');
 
   </script>
