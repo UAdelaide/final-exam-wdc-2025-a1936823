@@ -135,7 +135,8 @@
 
   document.getElementById('logoutBtn').addEventListener('click', () => {
     fetch('/api/users/logout', {method: 'POST'})
-      .then
+      .then(() =>
+    window.location = '/index.html')
   })
   </script>
 
