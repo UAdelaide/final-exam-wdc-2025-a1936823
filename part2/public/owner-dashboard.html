@@ -92,7 +92,7 @@
           try { const res =await fetch('/api/dogs/mine');
           if (!res.ok) throw new Error('Failed to load dogs');
           myDogs.value = await res.json();
-          } cathc (err) {
+          } catch (err) {
             error.value = err.message;
           }
         }
@@ -134,6 +134,7 @@
 
         onMounted(() => {
           loadWalks();
+          load
         });
                 async function logout() {
           await fetch('/api/users/logout', {method: 'POST'});
