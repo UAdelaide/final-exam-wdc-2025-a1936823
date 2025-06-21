@@ -42,7 +42,7 @@
       .then(res => res.json().then(data => ({ ok: res.ok, data})))
       .then(({ ok, data }) => {
         if (ok) {
-          window
+          window.Location = data.redirect;
         }
       })
     })
