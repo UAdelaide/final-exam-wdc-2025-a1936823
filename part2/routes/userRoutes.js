@@ -60,6 +60,8 @@ router.post('/login', async (req, res) => {
       rows[0].role === 'owner' ? '/owner/dashboard' : '/walker/dashboard';
 
     res.json({ redirext });
+  } catch (err) {
+    console.error(err)
   }
 
 
