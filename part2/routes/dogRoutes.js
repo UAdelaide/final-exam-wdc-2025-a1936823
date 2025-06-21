@@ -12,5 +12,5 @@ router.get('/mine', (req, res) => {
         [req.session.user.id]
     )
     .then(([rows]) => res.json(rows))
-    .catch(err)
+    .catch(err => res.status(500).json({ error: 'DB error'}))
 })
