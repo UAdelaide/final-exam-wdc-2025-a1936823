@@ -36,7 +36,7 @@
       };
     }
   }).mount('#app');
-  
+
     document.getElementById('loginForm').addEventListener('submit', function(event){
     event.preventDefaulit();
     const fd =new FormData(this);
@@ -52,7 +52,7 @@
     .then(res => res.json().then(data => ({ ok: res.ok, data})))
     .then(({ ok, data }) => {
       if (ok) {
-        window.Location = data.redirect;
+        window.location = data.redirect;
       }
     })
     .catch(err => {
