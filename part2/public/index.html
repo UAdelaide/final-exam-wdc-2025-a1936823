@@ -44,7 +44,8 @@
         window.location = data.redirect;
       } else {
         const errBox = document.getElementById('loginError');
-        errBox.textContent = data.error ||
+        errBox.textContent = data.error || 'Login failed';
+        errBox.classList.remove()
       }
     }
   })
