@@ -4,7 +4,7 @@ const db = require('../models/db');
 
 router.get('/mine', async(req, res) => {
     if (!req.session.user) {
-        return res.status(401).json({ error: 'Not logged in;'});
+        return res.status(401).json({ error: 'Not logged in'});
     }
 
     const ownerId = req.session.user.id;
