@@ -39,7 +39,11 @@
       })
     })
     .then(res => res.json().then(dat => ({ ok: res.ok, data})))
-    .then(({ ok, data}))
+    .then(({ ok, data})) => {
+      if(ok){
+        window.location = data.redirect;
+      }
+    }
   })
   </script>
 
