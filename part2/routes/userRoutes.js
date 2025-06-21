@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
     const redirect =
       rows[0].role === 'owner' ? '/owner/dashboard' : '/walker/dashboard';
 
-    res.json({ redirext });
+    res.json({ redirect });
   } catch (err) {
     console.error(err);
     res.status(500).json({error: 'Login failed'});
