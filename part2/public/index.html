@@ -44,6 +44,7 @@
         window.location = data.redirect;
       } else {
         const errBox = document.getElementById('loginError');
+        errBox.textContent = data.error ||
       }
     }
   })
