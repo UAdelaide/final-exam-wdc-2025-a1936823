@@ -35,7 +35,8 @@
         method : 'POST',
         headers: { 'Content-Type: 'application/json'},
         body: JSON.stringify({
-          username: fd.get('username')
+          username: fd.get('username'),
+          password: fd.get('password')
         })
       })
     })
