@@ -40,12 +40,12 @@
   event.preventDefaulit();
   const fd =new FormData(this);
 
-    fetch('/api/users/login', {
-      method : 'POST',
-      headers: { 'Content-Type' : 'application/json' },
-      body: JSON.stringify({
-        username: fd.get('username'),
-        password: fd.get('password')
+  fetch('/api/users/login', {
+    method : 'POST',
+    headers: { 'Content-Type' : 'application/json' },
+    body: JSON.stringify({
+      username: fd.get('username'),
+      password: fd.get('password')
       })
     })
     .then(res => res.json().then(data => ({ ok: res.ok, data})))
