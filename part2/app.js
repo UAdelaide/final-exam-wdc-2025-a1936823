@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
-const session = require('express-session'):
+const session = require('express-session');
 require('dotenv').config();
 
 app.use(
-    seesion({
+    session({
         secret: process.env.SESSION_SECRET || 'dog-cookie',
         resave: false,
         saveUnimitialized: false,
