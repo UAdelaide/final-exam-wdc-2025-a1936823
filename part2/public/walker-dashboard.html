@@ -91,7 +91,7 @@
     }).mount('#app');
 
   document.addEventListener('DOMContentLoaded', () => {
-    const out = do
+    const out = document.getElementById('logoutBtn');
   })
     out?.addEventListener('click', () => {
       fetch('/api/users/logout', {method: 'POST'})
