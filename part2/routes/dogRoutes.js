@@ -13,7 +13,8 @@ router.get('/mine', async(req, res) => {
         const [rows] = await db.query(
             'SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?', [ownerId]);
             res.json(rows);
-        )
-    }
+        } catch (error) {
+            con
+        }
 
 module.exports = router;
