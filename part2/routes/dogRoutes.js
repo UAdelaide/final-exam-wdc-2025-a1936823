@@ -3,15 +3,5 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/mine', async(req, res) => {
-    if (!req.session.user || req.session.user.role !== 'owner')
-        return res.status(401).json({ error: 'Not authorized' });
-
-    db.query(
-        'SELECT dog_id AS id, name FROM Dogs WHERE owner_id = ?',
-        [req.session.user.id]
-    )
-    .then(([rows]) => res.json(rows))
-    .catch(err => res.status(500).json({ error: 'DB error'}));
-});
-
+    if (!req.session.user)
 module.exports = router;
