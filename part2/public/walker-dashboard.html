@@ -81,22 +81,20 @@
           loadWalkRequests();
         });
 
+        async function logout() {
+          await fetch('/api/users/logout', {method: 'POST'});
+          window.location = '/index.html';
+        };
+
         return {
           walks,
           message,
           error,
-          applyToWalk
+          applyToWalk,
+          logout
         };
       }
     }).mount('#app');
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const out = document.getElementById('logoutBtn');
-    out?.addEventListener('click', () => {
-      fetch('/api/users/logout', {method: 'POST'})
-      .then(() => (window.location = '/index.html'))
-    });
-  })
 
   </script>
 
