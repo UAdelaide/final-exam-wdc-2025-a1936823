@@ -42,6 +42,8 @@
     .then(({ ok, data})) => {
       if(ok){
         window.location = data.redirect;
+      } else {
+        const errBox = document.getElementById('loginError');
       }
     }
   })
