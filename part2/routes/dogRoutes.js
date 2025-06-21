@@ -8,6 +8,6 @@ router.get('/mine', (req, res) => {
         return res.status(401).json({ error: 'Not authorized' });
 
     db.query(
-        
+        'SELECT dog_id AS id, name FROM Dogs WHERE owner_id = ?'
     )
 })
