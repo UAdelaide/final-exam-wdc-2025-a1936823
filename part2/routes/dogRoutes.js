@@ -8,8 +8,9 @@ router,get('/mine', (req, res) => {
         return res.status(401).json({error: 'Not authorized'});
 
     db.query(
-        'SELECT dog_id AS id, name FROM Dogs WHERE onwer_id ='
+        'SELECT dog_id AS id, name FROM Dogs WHERE onwer_id = ?',
+        [req.session.user.id]
     )
-
+    .then
     )
 })
