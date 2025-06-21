@@ -88,7 +88,9 @@
         const error = ref('');
         const myDogs = ref([]);
 
-        as
+        async function loadMyDogs() {
+          try { const res =await fetch('/')}
+        }
 
         async function loadWalks() {
           try {
