@@ -6,10 +6,11 @@ require('dotenv').config();
 app.use(
     seesion({
         secret: process.env.SESSION_SECRET || 'dog-cookie',
-        resave
+        resave: false,
+        saveUnimitialized: false,
     })
 )
-
+;
 const app = express();
 
 // Middleware
