@@ -27,7 +27,8 @@
 
 
   <script>
-    document.getElementById('loginForm').addEventListener('submit, function (event) {event.preventDefault();
+    document.getElementById('loginForm').addEventListener('submit, function (event) {
+    event.preventDefault();
     const fd = new FormData(this);
 
     fetch('/api/users/login',{
