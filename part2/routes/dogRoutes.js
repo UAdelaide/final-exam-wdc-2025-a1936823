@@ -11,6 +11,7 @@ router,get('/mine', (req, res) => {
         'SELECT dog_id AS id, name FROM Dogs WHERE onwer_id = ?',
         [req.session.user.id]
     )
-    .then(())
+    .then(([rows]) => res.json(rows))
+    .catch
     )
 })
