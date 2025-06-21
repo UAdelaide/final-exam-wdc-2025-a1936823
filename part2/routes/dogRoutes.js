@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-router.get('/mine', (req, res) => {
+router.get('/mine', async(req, res) => {
     if (!req.session.user || req.session.user.role !== 'owner')
         return res.status(401).json({ error: 'Not authorized' });
 
