@@ -3,6 +3,12 @@ const path = require('path');
 const session = require('express-session');
 require('dotenv').config();
 
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.use(
     session({
         secret: process.env.SESSION_SECRET || 'dog-cookie',
@@ -10,11 +16,7 @@ app.use(
         saveUnimitialized: false,
     })
 );
-const app = express();
 
-// Middleware
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
