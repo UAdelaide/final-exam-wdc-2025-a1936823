@@ -5,7 +5,8 @@ require('dotenv').config();
 
 app.use(
     seesion({
-        secret
+        secret: process.env.SESSION_SECRET || 'dog-cookie',
+        resave
     })
 )
 
