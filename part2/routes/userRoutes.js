@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
     };
 
     const redirect =
-      rows[0].role === 'owner' ? '/owner/dashboard.html' : '/walker/dashboard.html';
+      rows[0].role === 'owner' ? '/owner-dashboard.html' : '/walker-dashboard.html';
 
     res.json({ redirect });
   } catch (err) {
