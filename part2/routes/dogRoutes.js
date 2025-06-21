@@ -11,4 +11,6 @@ router.get('/mine', (req, res) => {
         'SELECT dog_id AS id, name FROM Dogs WHERE owner_id = ?',
         [req.session.user.id]
     )
+    .then(([rows]) => res.json(rows))
+    .catch(err)
 })
