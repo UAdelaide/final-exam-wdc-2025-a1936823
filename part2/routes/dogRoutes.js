@@ -11,7 +11,7 @@ router.get('/mine', async(req, res) => {
 
     try{
         const [rows] = await db.query(
-            'SELECT dog_id, name, size FROM Dogs '
+            'SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?', [ownerId];
         )
     }
 
