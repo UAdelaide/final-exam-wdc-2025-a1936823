@@ -135,7 +135,9 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const out = document.getElementById('logoutBtn');
-    out?.addEventListener('click', () =>)
+    out?.addEventListener('click', () => {
+      fetch('/api/users/logout', {method: 'POST'})
+    })
   })
   </script>
 
