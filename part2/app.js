@@ -13,7 +13,7 @@ app.use(
     session({
         secret: process.env.SESSION_SECRET || 'dog-cookie',
         resave: false,
-        saveUnimitialized: false,
+        saveUninitialized: false,
     })
 );
 
