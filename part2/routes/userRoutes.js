@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
     };
 
     const redirect =
-      
+      rows
 
 
     res.json({ message: 'Login successful', user: rows[0] });
