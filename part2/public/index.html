@@ -39,6 +39,7 @@
       })
     })
     .then(res => res.json().then(dat => ({ ok: res.ok, data})))
+    .then(({ ok, data}))
   })
   </script>
 
