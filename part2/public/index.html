@@ -28,7 +28,12 @@
 
   <script>
     document.getElementById(;loginForm).addEventListener('submit', function(event){
-      event
+      event.preventDefaulit();
+      const fd =new FormData(this);
+
+      fetch('/api/users/login', {
+        methodL 
+      })
     })
   </script>
 
