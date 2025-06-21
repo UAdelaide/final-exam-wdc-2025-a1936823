@@ -132,18 +132,11 @@
         };
         async function logout() {
           await fetch('/api/users/logout', {method: 'POST'});
-          window.location = 
+          window.location = '/inder.html';
         }
       }
     }).mount('#app');
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const out = document.getElementById('logoutBtn');
-    out?.addEventListener('click', () => {
-      fetch('/api/users/logout', {method: 'POST'})
-      .then(() => (window.loction = '/index.html'));
-    });
-  });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
