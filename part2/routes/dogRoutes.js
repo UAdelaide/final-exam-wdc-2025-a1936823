@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/mine', async(req, res) => {
-    console.log(' session', req.session.user)
+    console.log(' session', req.session.user);
     if (!req.session.user) {
         return res.status(401).json({ error: 'Not logged in'});
     }
